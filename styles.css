@@ -1,0 +1,111 @@
+.container {
+  width: 100%;
+  height: 80vh;
+  background-color: red;
+}
+[class*="pokeball"] {
+  position: absolute;
+  bottom: 300px;
+  width: 100px;
+  height: 100px;
+  background-image: url("Pokeball-PNG-HD-Image.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.pokeball {
+  animation-name: girarymoveralreves;
+
+  right: 0;
+}
+.pokeball2 {
+  animation-name: girarymover;
+}
+
+@keyframes girarymover {
+  0% {
+    transform: translateX(0px) rotate(0);
+  }
+  10% {
+    transform: translateX(100px) rotate(36deg);
+  }
+  20% {
+    transform: translateX(200px) rotate(72deg);
+  }
+  30% {
+    transform: translateX(300px) rotate(108deg);
+    bottom: 200px;
+  }
+  40% {
+    transform: translateX(400px) rotate(144deg);
+    bottom: 250px;
+  }
+  50% {
+    transform: translateX(500px) rotate(180deg);
+  }
+  60% {
+    transform: translateX(600px) rotate(216deg);
+    bottom: 220px;
+  }
+  70% {
+    transform: translateX(650px) rotate(252deg);
+    bottom: 215px;
+  }
+  80% {
+    transform: translateX(750px) rotate(288deg);
+    bottom: 210px;
+  }
+  90% {
+    transform: translateX(800px) rotate(324deg);
+    bottom: 205px;
+  }
+  100% {
+    transform: translateX(0px) rotate(360deg);
+    bottom: 200px;
+  }
+}
+@keyframes girarymoveralreves {
+  0% {
+    transform: translateX(0px) rotate(360deg);
+  }
+  10% {
+    transform: translateX(-100px) rotate(324deg);
+  }
+  20% {
+    transform: translateX(-200px) rotate(288deg);
+  }
+  30% {
+    transform: translateX(-300px) rotate(252deg);
+    bottom: 200px;
+  }
+  40% {
+    transform: translateX(-400px) rotate(216deg);
+    bottom: 250px;
+  }
+  50% {
+    transform: translateX(-500px) rotate(180deg);
+  }
+  60% {
+    transform: translateX(-600px) rotate(144deg);
+    bottom: 220px;
+  }
+  70% {
+    transform: translateX(-650px) rotate(108deg);
+    bottom: 215px;
+  }
+  80% {
+    transform: translateX(-750px) rotate(72deg);
+    bottom: 210px;
+  }
+  90% {
+    transform: translateX(-800px) rotate(36deg);
+    bottom: 205px;
+  }
+  100% {
+    transform: translateX(0px) rotate(0);
+    bottom: 200px;
+  }
+}
