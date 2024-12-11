@@ -1,26 +1,35 @@
-.container {
-  width: 100%;
-  height: 80vh;
-  background-color: red;
+* {
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
 }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(wp10311682.jpg);
+  background-size: contain;
+}
+
 [class*="pokeball"] {
   position: absolute;
-  bottom: 300px;
-  width: 100px;
-  height: 100px;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
   background-image: url("Pokeball-PNG-HD-Image.webp");
   background-repeat: no-repeat;
   background-size: contain;
-
-  animation-duration: 3s;
+  transition: all 0.1s ease-in;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 .pokeball {
   animation-name: girarymoveralreves;
-
   right: 0;
 }
+
 .pokeball2 {
   animation-name: girarymover;
 }
@@ -28,84 +37,173 @@
 @keyframes girarymover {
   0% {
     transform: translateX(0px) rotate(0);
+    bottom: 200px;
   }
+
   10% {
     transform: translateX(100px) rotate(36deg);
+
   }
+
   20% {
     transform: translateX(200px) rotate(72deg);
   }
+
   30% {
     transform: translateX(300px) rotate(108deg);
-    bottom: 200px;
+
   }
+
   40% {
     transform: translateX(400px) rotate(144deg);
-    bottom: 250px;
+
   }
+
   50% {
-    transform: translateX(500px) rotate(180deg);
+    transform: translateX(450px) rotate(180deg);
   }
+
   60% {
-    transform: translateX(600px) rotate(216deg);
-    bottom: 220px;
+    transform: translateX(500px) rotate(216deg);
+
   }
+
   70% {
-    transform: translateX(650px) rotate(252deg);
-    bottom: 215px;
+    transform: translateX(550px) rotate(252deg);
+
   }
+
   80% {
-    transform: translateX(750px) rotate(288deg);
-    bottom: 210px;
+    transform: translateX(600px) rotate(288deg);
+
   }
+
   90% {
-    transform: translateX(800px) rotate(324deg);
-    bottom: 205px;
+    transform: translateX(650px) rotate(324deg);
+
   }
+
   100% {
-    transform: translateX(0px) rotate(360deg);
-    bottom: 200px;
+    transform: translateX(700px) rotate(360deg);
+    width: 60px;
+    height: 60px;
+    background-image: none;
+    background-color: white;
+    border: 2px solid wheat;
+    border-radius: 100%;
+
+
+
   }
 }
+
 @keyframes girarymoveralreves {
   0% {
     transform: translateX(0px) rotate(360deg);
+    bottom: 200px;
   }
+
   10% {
     transform: translateX(-100px) rotate(324deg);
   }
+
   20% {
     transform: translateX(-200px) rotate(288deg);
   }
+
   30% {
     transform: translateX(-300px) rotate(252deg);
-    bottom: 200px;
+
   }
+
   40% {
     transform: translateX(-400px) rotate(216deg);
-    bottom: 250px;
+
   }
+
   50% {
-    transform: translateX(-500px) rotate(180deg);
+    transform: translateX(-450px) rotate(180deg);
   }
+
   60% {
-    transform: translateX(-600px) rotate(144deg);
-    bottom: 220px;
+    transform: translateX(-500px) rotate(144deg);
+
   }
+
   70% {
-    transform: translateX(-650px) rotate(108deg);
-    bottom: 215px;
+    transform: translateX(-550px) rotate(108deg);
+
   }
+
   80% {
-    transform: translateX(-750px) rotate(72deg);
-    bottom: 210px;
+    transform: translateX(-600px) rotate(72deg);
   }
+
   90% {
-    transform: translateX(-800px) rotate(36deg);
-    bottom: 205px;
+    transform: translateX(-650px) rotate(36deg);
+
   }
+
   100% {
-    transform: translateX(0px) rotate(0);
-    bottom: 200px;
+    transform: translateX(-700px) rotate(0);
+    width: 60px;
+    height: 60px;
+    background-image: none;
+    background-color: white;
+    border: 2px solid rgb(235, 199, 134);
+    border-radius: 100%;
+  }
+}
+
+.pokemon-static {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 700px;
+  left: 300px;
+  background-image: url(2.gif);
+  background-size: contain;
+}
+
+[class*="pokemon-moving"] {
+ 
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-name: moving;
+  animation-duration: 10s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+
+
+}
+
+.pokemon-moving {
+  width: 60px;
+  height: 60px;
+  background-image: url(2bullets852\ on\ Planet\ Minecraft.gif);
+  top: 520px;
+  left: -300px;
+}
+
+.pokemon-moving2 {
+  width: 150px;
+  height: 150px;
+  animation-direction: alternate-reverse;
+  animation-delay: 12s;
+  background-image: url(charizard.gif);
+  top: 100px;
+  right: 300px;
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(0px);
+
+
+  }
+
+  100% {
+    transform: translateX(2000px);
   }
 }
