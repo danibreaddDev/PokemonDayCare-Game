@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +26,7 @@
   left: 0;
   animation: girarymover 3s linear;
 }
+
 .pokeball-rigth {
   right: 0;
   animation: girarymoveralreves 3s linear;
@@ -151,9 +153,11 @@
     border-radius: 100%;
   }
 }
+
 [class*="pokemon-static"] {
   opacity: 0;
   position: absolute;
+  z-index: 1;
   width: 200px;
   height: 200px;
   bottom: 0;
@@ -161,24 +165,30 @@
   background-repeat: no-repeat;
   animation: appear 1s linear 3s forwards;
 }
+
 .pokemon-static1 {
   left: 31%;
-  background-image: url("images/pokemon/shinx.gif");
+  background-image: url("images/pokemon/coucho.gif");
 }
+
 .pokemon-static2 {
   right: 31%;
-  background-image: url("images/pokemon/mew2.gif");
+  background-image: url("images/pokemon/ditto.gif");
 }
+
 @keyframes appear {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 [class*="pokemon-moving"] {
   position: relative;
+  z-index: 0;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -201,22 +211,25 @@
   top: 20%;
   left: -300px;
 }
+
 .pokemon-moving3 {
   width: 60px;
   height: 60px;
-  top: 55%;
+  top: 40%;
   left: -300px;
   animation: movingGif 10s linear 50s infinite reverse;
   background-image: url("images/pokemon/jolteon.gif");
 }
+
 .pokemon-moving4 {
   width: 60px;
   height: 60px;
-  top: 45%;
+  top: 35%;
   left: -300px;
   animation: movingGif 10s linear 1s infinite alternate-reverse;
   background-image: url("images/pokemon/Scorbunny.gif");
 }
+
 .pokemon-moving5 {
   width: 60px;
   height: 60px;
@@ -225,10 +238,21 @@
   animation: movingGif 10s linear 25s infinite alternate;
   background-image: url("images/pokemon/mew.gif");
 }
+
+.pokemon-moving6 {
+  width: 60px;
+  height: 60px;
+  top: 60%;
+  left: -300px;
+  animation: movingSprite 10s linear 5s infinite alternate;
+  background-image: url("images/pokemon/pikachu_surf-removebg-preview.png");
+}
+
 @keyframes movingGif {
   0% {
     transform: translateX(0px);
   }
+
   20% {
     transform: translateX(500px);
   }
@@ -236,20 +260,55 @@
   40% {
     transform: translateX(1000px);
   }
+
   60% {
     transform: translateX(1500px);
   }
+
   80% {
     transform: translateX(2000px);
   }
+
   100% {
     transform: translateX(2500px);
   }
 }
+
+@keyframes movingSprite {
+  0% {
+    transform: translateX(0px);
+  }
+
+  20% {
+    transform: translateX(600px);
+
+  }
+
+  40% {
+    transform: translateX(1200px);
+
+  }
+
+  60% {
+    transform: translateX(1800px);
+
+  }
+
+  80% {
+    transform: translateX(2400px);
+
+  }
+
+  100% {
+    transform: translateX(3000px);
+  }
+}
+
 @keyframes movingSprites {
   0% {
     transform: translateX(0px);
   }
+
   20% {
     transform: translateX(600px);
     background-image: url("/images/pokemon/charizard2.png");
@@ -258,32 +317,39 @@
 
   40% {
     transform: translateX(1200px);
-    background-image: url("/images/pokemon/charizard3.png");
+    background-image: url("/images/pokemon/charizard1.png");
   }
+
   60% {
     transform: translateX(1800px);
     background-image: url("/images/pokemon/charizard4.png");
   }
+
   80% {
     transform: translateX(2400px);
-    background-image: url("/images/pokemon/charizard1.png");
+    background-image: url("/images/pokemon/charizard3.png");
   }
+
   100% {
     transform: translateX(3000px);
     background-image: url("/images/pokemon/charizard2.png");
   }
 }
+
 @keyframes fly {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   20%,
   40%,
   60%,
   80% {
     transform: translateY(1000px);
   }
+
   10%,
   30%,
   50%,
@@ -292,8 +358,9 @@
     transform: translateY(-1000px);
   }
 }
+
 /*menu*/
-.start-menu{
+.start-menu {
   width: 100vw;
   height: 100vh;
   background-image: url(wp10311682.jpg);
@@ -302,6 +369,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .menu {
   border: 4px solid #000;
   border-radius: 10px;
@@ -325,7 +393,7 @@
 }
 
 .go-button {
-  
+
   font-size: 24px;
   font-weight: bold;
   padding: 10px 20px;
@@ -339,12 +407,59 @@
 
 .go-button:hover {
   background-color: #3C5AA6;
-  border-color:#FFCB05 ;
+  border-color: #FFCB05;
   color: #FFCB05;
   transform: scale(1.1);
 }
+
 .menu:has(.go-button:hover) .title {
   text-shadow: 2px 2px #3C5AA6;
   color: #FFCB05;
 
+}
+
+/*pikachu corriendo*/
+
+.poke {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  top: 25%;
+  animation: pikaRunningStop 4s linear forwards, pikaSpawn 2s ease 4s forwards;
+  background-image: url("images/pokemon/Pikachu.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@keyframes pikaRunningStop {
+  0% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+  90%{
+    transform: translateY(300px) scale(5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(400px) scale(5);
+    opacity: 0;
+    
+  }
+}
+@keyframes pikaSpawn {
+  0% {
+    opacity: 1;
+    background: url("images/pokemon/pikachuHello.gif");
+  }
+  99%{
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px) scale(5);
+    background: url("images/pokemon/pikachuHello.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 1;
+    
+  }
 }
