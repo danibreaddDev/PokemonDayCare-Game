@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script type="module" src="app.js"></script>
-</head>
-
-<body>
-  <div class="container" id="app">
-    <div class="pokeball-left"></div>
-    <div class="pokeball-rigth"></div>
-    <div class="pokemon-static1"></div>
-    <div class="pokemon-static2"></div>
-    <div class="pokemon-moving"></div>
-    <div class="pokemon-moving6"></div>
-    <div class="pokemon-moving2"></div>
-    <div class="pokemon-moving3"></div>
-    <div class="pokemon-moving4"></div>
-    <div class="pokemon-moving5"></div>
-  </div>
-  <div class="start-menu" id="start">
-    <div class="menu">
-      <h1 class="title">Pokémon Day Care</h1>
-      <button class="go-button" id="go">Go!</button>
+  <body>
+    <div class="container" id="app">
+      <div class="pokeball-left"></div>
+      <div class="pokeball-rigth"></div>
+      <div class="pokemon-static1"></div>
+      <div class="pokemon-static2"></div>
+      <div class="pokemon-moving"></div>
+      <div class="pokemon-moving6"></div>
+      <div class="pokemon-moving2"></div>
+      <div class="pokemon-moving3"></div>
+      <div class="pokemon-moving4"></div>
+      <div class="pokemon-moving5"></div>
     </div>
+    <div class="start-menu" id="start">
+      <div class="menu">
+        <div class="title">
+          <h1>Pokémon Day Care</h1>
+        </div>
+        <div class="pokemons" id="choosePokes">
+          <div class="searchPoke">
+            <input type="text" id="pokemon" placeholder="Search for a Pokémon">
+            <input type="button" id="add" value="Add">
+          </div>
+          <div class="team" id="team"></div>
+        </div>
+        <div class="go-button">
+          <button id="go">Go!</button>
+        </div>
+      </div>
 
-    <div class="poke"></div>
-
-
-  </div>
-</body>
-
+      <div class="poke"></div>
+    </div>
+  </body>
 </html>

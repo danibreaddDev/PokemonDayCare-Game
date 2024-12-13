@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 * {
   margin: 0;
@@ -281,22 +281,18 @@
 
   20% {
     transform: translateX(600px);
-
   }
 
   40% {
     transform: translateX(1200px);
-
   }
 
   60% {
     transform: translateX(1800px);
-
   }
 
   80% {
     transform: translateX(2400px);
-
   }
 
   100% {
@@ -337,7 +333,6 @@
 }
 
 @keyframes fly {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -372,50 +367,79 @@
 
 .menu {
   border: 4px solid #000;
+  width: 50%;
   border-radius: 10px;
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+  grid-template-areas:
+    "title title title"
+    "pokemons pokemons go";
   padding: 20px;
   text-align: center;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   background-color: white;
 }
 
-
 .title {
+  grid-area: title;
   font-size: 36px;
-  margin-bottom: 20px;
-  color: #3C5AA6;
-  text-shadow: 2px 2px #FFCB05;
+  color: #3c5aa6;
+  text-shadow: 2px 2px #ffcb05;
   transition: all 0.3s linear;
 }
 
 .menu:hover .title {
   transform: scale(1.1);
 }
-
-.go-button {
-
+.pokemons{
+  grid-area: pokemons;
+  display: flex;
+  flex-direction: column;
+ padding: 20px;
+  
+}
+.searchPoke{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.searchPoke input{
+  padding: 10px;
+}
+.team{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.go-button{
+  grid-area: go;
+  align-self: center;
+}
+.go-button button {
+  
   font-size: 24px;
   font-weight: bold;
   padding: 10px 20px;
-  background-color: #FFCB05;
-  color: #3C5AA6;
-  border: 5px solid #3C5AA6;
+  background-color: #ffcb05;
+  color: #3c5aa6;
+  border: 5px solid #3c5aa6;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.go-button:hover {
-  background-color: #3C5AA6;
-  border-color: #FFCB05;
-  color: #FFCB05;
+.go-button button:hover {
+  background-color: #3c5aa6;
+  border-color: #ffcb05;
+  color: #ffcb05;
   transform: scale(1.1);
 }
 
 .menu:has(.go-button:hover) .title {
-  text-shadow: 2px 2px #3C5AA6;
-  color: #FFCB05;
-
+  text-shadow: 2px 2px #3c5aa6;
+  color: #ffcb05;
 }
 
 /*pikachu corriendo*/
@@ -436,14 +460,13 @@
     transform: translateY(0px) scale(1);
     opacity: 1;
   }
-  90%{
+  90% {
     transform: translateY(300px) scale(5);
     opacity: 1;
   }
   100% {
     transform: translateY(400px) scale(5);
     opacity: 0;
-    
   }
 }
 @keyframes pikaSpawn {
@@ -451,7 +474,7 @@
     opacity: 1;
     background: url("images/pokemon/pikachuHello.gif");
   }
-  99%{
+  99% {
     opacity: 1;
   }
   100% {
@@ -460,6 +483,5 @@
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 1;
-    
   }
 }
