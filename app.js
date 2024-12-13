@@ -15,6 +15,10 @@ async function getPokemon(myPokemon) {
 }
 function addPokemon(myPokemon) {
   const team = JSON.parse(localStorage.getItem("pokemons"));
+  if (team == null) {
+    team = [];
+    localStorage.setItem("pokemons",JSON.stringify(team));
+  }
   if (team.length > 1) {
     button_add.setAttribute("disabled");
     return;
