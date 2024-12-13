@@ -158,22 +158,12 @@
   opacity: 0;
   position: absolute;
   z-index: 1;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   bottom: 0;
   background-size: contain;
   background-repeat: no-repeat;
   animation: appear 1s linear 3s forwards;
-}
-
-.pokemon-static1 {
-  left: 31%;
-  background-image: url("images/pokemon/coucho.gif");
-}
-
-.pokemon-static2 {
-  right: 31%;
-  background-image: url("images/pokemon/ditto.gif");
 }
 
 @keyframes appear {
@@ -366,15 +356,15 @@
 }
 
 .menu {
-  border: 4px solid #000;
+  border: 4px solid #114cef;
   width: 50%;
   border-radius: 10px;
   display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2,1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
-    "title title title"
-    "pokemons pokemons go";
+    "title title title title"
+    "pokemons pokemons go go";
   padding: 20px;
   text-align: center;
   font-family: "Press Start 2P", cursive;
@@ -392,33 +382,93 @@
 .menu:hover .title {
   transform: scale(1.1);
 }
-.pokemons{
+.pokemons {
   grid-area: pokemons;
   display: flex;
   flex-direction: column;
- padding: 20px;
-  
+  gap: 20px;
 }
-.searchPoke{
+
+.pc {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
 }
-.searchPoke input{
+.pc-title {
   padding: 10px;
+  background: aqua;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.team{
+.pc-title > p {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  width: 50%;
+}
+.pc-pokemons {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "pokemonpc1 pokemonpc2 pokemonpc3"
+    "pokemonpc4 pokemonpc5 pokemonpc6";
+}
+.pc-pokemons div {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
 }
-.go-button{
+.pc-pokemons div button {
+  width: 50px;
+  height: 50px;
+}
+.pc-pokemons img {
+  width: 25%;
+  height: auto;
+}
+
+.pc-pokemons > div:nth-child(1) {
+  grid-area: pokemonpc1;
+}
+.pc-pokemons > div:nth-child(1) button{
+  background-image: url("images/pokemon/mew.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.pc-pokemons > div:nth-child(2) {
+  grid-area: pokemonpc2;
+}
+.pc-pokemons > div:nth-child(3) {
+  grid-area: pokemonpc3;
+}
+.pc-pokemons > div:nth-child(4) {
+  grid-area: pokemonpc4;
+}
+.pc-pokemons > div:nth-child(5) {
+  grid-area: pokemonpc5;
+}
+.pc-pokemons > div:nth-child(6) {
+  grid-area: pokemonpc6;
+}
+.pc-pokemons > div:nth-child(7) {
+  grid-area: pokemonpc7;
+}
+.pc-pokemons > div:nth-child(8) {
+  grid-area: pokemonpc8;
+}
+.pc-pokemons > div:nth-child(9) {
+  grid-area: pokemonpc9;
+}
+.go-button {
   grid-area: go;
   align-self: center;
 }
 .go-button button {
-  
   font-size: 24px;
   font-weight: bold;
   padding: 10px 20px;
