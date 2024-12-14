@@ -1,4 +1,3 @@
-
 function addPokemon(myPokemon) {
   let team = JSON.parse(localStorage.getItem("pokemons"));
   if (team == null) {
@@ -9,18 +8,9 @@ function addPokemon(myPokemon) {
     alert("solo dos pokemon");
     return;
   }
-
-  const pokemon = {
-    name: myPokemon.name,
-    img: myPokemon.sprites.front_default,
-  };
-
-  team.push(pokemon);
+  team.push(myPokemon.getAttribute("pokemon"));
   localStorage.setItem("pokemons", JSON.stringify(team));
-  const team_container = document.getElementsByClassName("pokemonTeam");
-  for (let index = 0; index < team_container.length; index++) {
-    team_container[index].style.backgroundImage = `url(${team[index].img})`;
-  }
+  myPokemon.style.border = "3px solid #4CAF50";
 }
 function setStaticPokemon() {
   let pokemons = document.getElementsByClassName("pokemon-static");
@@ -31,11 +21,11 @@ function setStaticPokemon() {
     if (index == 0) {
       pokemons[
         index
-      ].style.cssText = `background-image: url(${team[index].img}); left: 31%;`;
+      ].style.cssText = `background-image: url("/images/pc/${team[index]}.jpeg"); left: 31%;`;
     } else {
       pokemons[
         index
-      ].style.cssText = `background-image: url(${team[index].img}); right: 31%;`;
+      ].style.cssText = `background-image: url("/images/pc/${team[index]}.jpeg"); right: 31%;`;
     }
     i++;
   }
@@ -43,6 +33,8 @@ function setStaticPokemon() {
 let container_app = document.getElementById("app");
 let container_start = document.getElementById("start");
 let button_go = document.getElementById("go");
+let button_reset = document.getElementById("reset");
+let pokemons_pc = document.querySelectorAll(".pc-pokemons div");
 let pokemonMenuContainer = document.getElementById("choosePokes");
 container_app.style.display = "none";
 button_go.addEventListener("click", () => {
@@ -50,7 +42,20 @@ button_go.addEventListener("click", () => {
   container_start.style.display = "none";
   container_app.style.display = "block";
 });
-let button_add = document.getElementById("add");
+button_reset.addEventListener("click", () => {
+  localStorage.clear();
+  for (let index = 0; index < pokemons_pc.length; index++) {
+    pokemons_pc[index].style  = "";
+    
+  }
+});
+
+for (let index = 0; index < pokemons_pc.length; index++) {
+  pokemons_pc[index].addEventListener("click", () => {
+    addPokemon(pokemons_pc[index]);
+   
+  });
+}
 
 if (localStorage.getItem("pokemons") !== null) {
   let team = JSON.parse(localStorage.getItem("pokemons"));

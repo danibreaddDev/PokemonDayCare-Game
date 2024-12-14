@@ -505,6 +505,10 @@
 }
 .go-button {
   grid-area: go;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
   align-self: center;
 }
 .go-button button {
