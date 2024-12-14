@@ -352,12 +352,14 @@
   background-size: contain;
   display: flex;
   justify-content: center;
-  align-items: center;
+  
 }
 
 .menu {
+  margin-top: 10px;
   border: 4px solid #114cef;
   width: 50%;
+  height: 70%;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -413,47 +415,59 @@
   border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "pokemonpc1 pokemonpc2 pokemonpc3"
-    "pokemonpc4 pokemonpc5 pokemonpc6";
+    "pokemonpc4 pokemonpc5 pokemonpc6"
+    "pokemonpc7 pokemonpc8 pokemonpc9";
 }
 .pc-pokemons div {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+ 
 }
-.pc-pokemons div button {
-  width: 50px;
-  height: 50px;
-}
-.pc-pokemons img {
-  width: 25%;
-  height: auto;
-}
+
 
 .pc-pokemons > div:nth-child(1) {
   grid-area: pokemonpc1;
+  background-image: url("images/pc/charizar.jpeg");
+  background-size: cover;
+  background-position-y: top;
 }
-.pc-pokemons > div:nth-child(1) button{
-  background-image: url("images/pokemon/mew.gif");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+
 .pc-pokemons > div:nth-child(2) {
   grid-area: pokemonpc2;
+  background-image: url("images/pc/garchomp.jpeg");
+  background-size: cover;
+  background-position-y: top;
 }
 .pc-pokemons > div:nth-child(3) {
   grid-area: pokemonpc3;
+  background-image: url("images/pc/charizard.jpeg");
+  background-size: cover;
+  background-position-y: top;
 }
 .pc-pokemons > div:nth-child(4) {
   grid-area: pokemonpc4;
+  background-image: url("images/pc/lucario.jpeg");
+  background-size: cover;
+  background-position-y: top;
 }
 .pc-pokemons > div:nth-child(5) {
   grid-area: pokemonpc5;
+  background-image: url("images/pc/tyranitar.jpeg");
+  background-size: cover;
+  background-position-y: top;
 }
 .pc-pokemons > div:nth-child(6) {
   grid-area: pokemonpc6;
+  background-image: url("images/pc/scizor.jpeg");
+  background-size: cover;
+  background-position-y: top;
 }
 .pc-pokemons > div:nth-child(7) {
   grid-area: pokemonpc7;
@@ -495,10 +509,11 @@
 /*pikachu corriendo*/
 
 .poke {
-  position: relative;
+  position: absolute;
   width: 100px;
   height: 100px;
-  top: 25%;
+  top: 70%;
+  left: 75%;
   animation: pikaRunningStop 4s linear forwards, pikaSpawn 2s ease 4s forwards;
   background-image: url("images/pokemon/Pikachu.gif");
   background-size: contain;
