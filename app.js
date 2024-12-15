@@ -10,7 +10,7 @@ function addPokemon(myPokemon) {
   }
   team.push(myPokemon.getAttribute("pokemon"));
   localStorage.setItem("pokemons", JSON.stringify(team));
-  myPokemon.style.border = "3px solid #4CAF50";
+  myPokemon.style.border = "2px solid #3C5AA6";
 }
 function setStaticPokemon() {
   let pokemons = document.getElementsByClassName("pokemon-static");
@@ -21,11 +21,11 @@ function setStaticPokemon() {
     if (index == 0) {
       pokemons[
         index
-      ].style.cssText = `background-image: url("/images/pc/${team[index]}.jpeg"); left: 31%;`;
+      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left: 31%;`;
     } else {
       pokemons[
         index
-      ].style.cssText = `background-image: url("/images/pc/${team[index]}.jpeg"); right: 31%;`;
+      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); right: 31%;`;
     }
     i++;
   }
