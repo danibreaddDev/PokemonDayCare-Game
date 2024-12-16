@@ -1,4 +1,5 @@
 function addPokemon(myPokemon) {
+  let name = myPokemon.getAttribute("pokemon");
   let team = JSON.parse(localStorage.getItem("pokemons"));
   if (team == null) {
     team = [];
@@ -8,9 +9,9 @@ function addPokemon(myPokemon) {
     alert("solo dos pokemon");
     return;
   }
-  team.push(myPokemon.getAttribute("pokemon"));
+  team.push(name);
   localStorage.setItem("pokemons", JSON.stringify(team));
-  myPokemon.style.border = "2px solid #3C5AA6";
+  myPokemon.style.cssText = `border: 2px solid rgb(16, 53, 239); border-style:dashed; background-image:url(/images/pc/gifs/${name}.gif); background-size:cover; background-position:center;`;
 }
 function setStaticPokemon() {
   let pokemons = document.getElementsByClassName("pokemon-static");
