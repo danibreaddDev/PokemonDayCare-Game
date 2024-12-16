@@ -22,11 +22,11 @@ function setStaticPokemon() {
     if (index == 0) {
       pokemons[
         index
-      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left: 31%;`;
+      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left: 38%; animation-delay: 5s;`;
     } else {
       pokemons[
         index
-      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); right: 31%;`;
+      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left:30%; top:40%; animation-delay: 9s;`;
     }
     i++;
   }

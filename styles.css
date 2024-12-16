@@ -6,105 +6,177 @@
   scrollbar-width: none;
   font-family: "Press Start 2P", cursive;
 }
+
 body {
   position: relative;
   z-index: 0;
 }
+
 .container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: brown;
+  background-color: brown;
+
 }
-.escenario{
+
+.escenario {
   width: 100%;
   padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
-.escenario img{
+
+.escenario img {
+  position: relative;
+  z-index: 1;
   border: 5px solid red;
   border-style: dashed;
 }
 
 
-[class*="pokeball"] {   
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
+[class*="pokeball"] {
+  position: relative;
+  z-index: -1;
+  right: 650px;
+  top: -400px;
   width: 50px;
   height: 50px;
+  background-image: url("Pokeball-PNG-HD-Image.webp");
   background-repeat: no-repeat;
   background-size: contain;
+  
+
 }
 
-.pokeball-left {
-  left: 0;
-  animation: girarymover 3s linear;
+.pokeball-street {
+  right: 695px;
+  animation: spawnpokeStreet 5s linear;
 }
 
-.pokeball-rigth {
-  right: 0;
-  animation: girarymoveralreves 3s linear;
+.pokeball-grass {
+  right: 755px;
+  animation: spawngrasspoke 5s linear 4s;
 }
-
-@keyframes girarymover {
+@keyframes spawngrasspoke{
   0% {
-    transform: translateX(0px) rotate(0);
-    bottom: 40%;
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(0px) rotate(0) scale(1);
+    z-index: 1;
   }
 
   10% {
-    transform: translateX(100px) rotate(36deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(50px) rotate(36deg) scale(1);
+    z-index: 1;
   }
 
   20% {
-    transform: translateX(200px) rotate(72deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(100px) rotate(72deg) scale(1);
+    z-index: 1;
+   
   }
 
   30% {
-    transform: translateX(300px) rotate(108deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(150px) rotate(108deg) scale(1);
+    z-index: 1;
   }
 
   40% {
-    transform: translateX(400px) rotate(144deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(200px) rotate(144deg) scale(1);
+    z-index: 1;
   }
 
   50% {
-    transform: translateX(450px) rotate(180deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(250px) rotate(180deg) scale(1);
+    z-index: 1;
   }
 
   60% {
-    transform: translateX(500px) rotate(216deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(300px) rotate(216deg) scale(0.75);
+    z-index: 1;
   }
 
   70% {
-    transform: translateX(550px) rotate(252deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
+    transform: translateY(325px) rotate(252deg) scale(0.75);
+    z-index: 1;
   }
 
   80% {
-    transform: translateX(600px) rotate(288deg);
+    transform: translateY(350px) rotate(288deg) scale(0.75);
+    z-index: 1;
   }
 
   90% {
-    transform: translateX(650px) rotate(324deg);
+    transform: translateY(400px) rotate(324deg) scale(0.5);
+    z-index: 1;
   }
 
   100% {
-    transform: translateX(700px) rotate(360deg);
-    width: 250px;
-    height: 250px;
+    transform: translateY(425px) rotate(360deg) scale(0.5);
+    z-index: 1;
+    background-image: none;
+    background-color: white;
+    border: 2px solid wheat;
+    border-radius: 100%;
+  }
+}
+@keyframes spawnpokeStreet {
+  0% {
+    transform: translateY(0px) rotate(0) scale(1);
+    z-index: 1;
+  }
+
+  10% {
+    transform: translateY(100px) rotate(36deg) scale(1);
+    z-index: 1;
+  }
+
+  20% {
+    transform: translateY(200px) rotate(72deg) scale(1);
+    z-index: 1;
+   
+  }
+
+  30% {
+    transform: translateY(300px) rotate(108deg) scale(1);
+    z-index: 1;
+  }
+
+  40% {
+    transform: translateY(400px) rotate(144deg) scale(1);
+    z-index: 1;
+  }
+
+  50% {
+    transform: translateY(500px) rotate(180deg) scale(1);
+    z-index: 1;
+  }
+
+  60% {
+    transform: translateY(550px) rotate(216deg) scale(0.75);
+    z-index: 1;
+  }
+
+  70% {
+    transform: translateY(600px) rotate(252deg) scale(0.75);
+    z-index: 1;
+  }
+
+  80% {
+    transform: translateY(650px) rotate(288deg) scale(0.75);
+    z-index: 1;
+  }
+
+  90% {
+    transform: translateY(700px) rotate(324deg) scale(0.5);
+    z-index: 1;
+  }
+
+  100% {
+    transform: translateY(725px) rotate(360deg) scale(0.5);
+    z-index: 1;
     background-image: none;
     background-color: white;
     border: 2px solid wheat;
@@ -112,66 +184,7 @@ body {
   }
 }
 
-@keyframes girarymoveralreves {
-  0% {
-    transform: translateX(0px) rotate(360deg);
-    bottom: 40%;
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
 
-  10% {
-    transform: translateX(-100px) rotate(324deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
-
-  20% {
-    transform: translateX(-200px) rotate(288deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
-
-  30% {
-    transform: translateX(-300px) rotate(252deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
-
-  40% {
-    transform: translateX(-400px) rotate(216deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
-
-  50% {
-    transform: translateX(-450px) rotate(180deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
-
-  60% {
-    transform: translateX(-500px) rotate(144deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
-
-  70% {
-    transform: translateX(-550px) rotate(108deg);
-    background-image: url("Pokeball-PNG-HD-Image.webp");
-  }
-
-  80% {
-    transform: translateX(-600px) rotate(72deg);
-  }
-
-  90% {
-    transform: translateX(-650px) rotate(36deg);
-  }
-
-  100% {
-    transform: translateX(-700px) rotate(0);
-    width: 250px;
-    height: 250px;
-    background-image: none;
-    background-color: white;
-    border: 2px solid rgb(235, 199, 134);
-    border-radius: 100%;
-  }
-}
 
 [class*="pokemon-static"] {
   opacity: 0;
@@ -182,8 +195,9 @@ body {
   bottom: 100px;
   background-size: contain;
   background-repeat: no-repeat;
-  animation: appear 1s linear 3s forwards;
+  animation: appear 1s linear forwards;
 }
+
 
 @keyframes appear {
   0% {
@@ -341,6 +355,7 @@ body {
 }
 
 @keyframes fly {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -378,7 +393,7 @@ body {
   margin-top: 10px;
   border: 4px solid #114cef;
   width: 50%;
-  height: 70%;
+  height: 75%;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -402,6 +417,7 @@ body {
 .menu:hover .title {
   transform: scale(1.1);
 }
+
 .pokemons {
   grid-area: pokemons;
   display: flex;
@@ -413,6 +429,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .pc-title {
   padding: 10px;
   background: #ffcb05;
@@ -422,7 +439,8 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.pc-title > p {
+
+.pc-title>p {
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
@@ -430,6 +448,7 @@ body {
   background-color: white;
   width: 50%;
 }
+
 .pc-pokemons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -439,6 +458,7 @@ body {
     "pokemonpc4 pokemonpc5 pokemonpc6"
     "pokemonpc7 pokemonpc8 pokemonpc9";
 }
+
 .pc-pokemons div {
   display: flex;
   justify-content: center;
@@ -454,115 +474,132 @@ body {
   cursor: pointer;
 }
 
-.pc-pokemons > div:nth-child(1) {
+.pc-pokemons>div:nth-child(1) {
   grid-area: pokemonpc1;
   background-image: url("images/pc/pngs/staraptor.png");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(1):hover {
+
+.pc-pokemons>div:nth-child(1):hover {
   grid-area: pokemonpc1;
   background-image: url("images/pc/gifs/staraptor.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(2) {
+
+.pc-pokemons>div:nth-child(2) {
   grid-area: pokemonpc2;
   background-image: url("images/pc/pngs/luxray.png");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(2):hover {
+
+.pc-pokemons>div:nth-child(2):hover {
   grid-area: pokemonpc2;
   background-image: url("images/pc/gifs/luxray.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(3) {
+
+.pc-pokemons>div:nth-child(3) {
   grid-area: pokemonpc3;
   background-image: url("images/pc/pngs/gyratina.png");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(3):hover {
+
+.pc-pokemons>div:nth-child(3):hover {
   grid-area: pokemonpc3;
   background-image: url("images/pc/gifs/gyratina.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(4) {
+
+.pc-pokemons>div:nth-child(4) {
   grid-area: pokemonpc4;
   background-image: url("images/pc/pngs/lucario.png");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(4):hover {
+
+.pc-pokemons>div:nth-child(4):hover {
   grid-area: pokemonpc4;
   background-image: url("images/pc/gifs/lucario.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(5) {
+
+.pc-pokemons>div:nth-child(5) {
   grid-area: pokemonpc5;
   background-image: url("images/pc/pngs/arceus.png");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(5):hover {
+
+.pc-pokemons>div:nth-child(5):hover {
   grid-area: pokemonpc5;
   background-image: url("images/pc/gifs/arceus.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(6) {
+
+.pc-pokemons>div:nth-child(6) {
   grid-area: pokemonpc6;
   background-image: url("images/pc/pngs/dratini.png");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(6):hover {
+
+.pc-pokemons>div:nth-child(6):hover {
   grid-area: pokemonpc6;
   background-image: url("images/pc/gifs/dratini.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(7) {
+
+.pc-pokemons>div:nth-child(7) {
   background-image: url("images/pc/pngs/mudkip.png");
   grid-area: pokemonpc7;
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(7):hover {
+
+.pc-pokemons>div:nth-child(7):hover {
   grid-area: pokemonpc7;
   background-image: url("images/pc/gifs/mudkip.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(8) {
+
+.pc-pokemons>div:nth-child(8) {
   background-image: url("images/pc/pngs/weavile.png");
   grid-area: pokemonpc8;
   background-size: cover;
   background-position: center;
 }
 
-.pc-pokemons > div:nth-child(8):hover {
+.pc-pokemons>div:nth-child(8):hover {
   grid-area: pokemonpc8;
   background-image: url("images/pc/gifs/weavile.gif");
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(9) {
+
+.pc-pokemons>div:nth-child(9) {
   background-image: url("images/pc/pngs/dyalga.png");
   grid-area: pokemonpc9;
   background-size: cover;
   background-position-y: center;
 }
-.pc-pokemons > div:nth-child(9):hover {
+
+.pc-pokemons>div:nth-child(9):hover {
   grid-area: pokemonpc9;
   background-image: url("images/pc/gifs/dyalga.gif");
   background-size: cover;
   background-position-y: center;
 }
+
 .pc-num {
   padding: 10px;
   border-bottom-left-radius: 10px;
@@ -573,7 +610,7 @@ body {
   align-items: center;
 }
 
-.pc-num > p {
+.pc-num>p {
   padding: 10px;
   background: white;
   border: 1px solid black;
@@ -589,6 +626,7 @@ body {
   align-items: center;
   align-self: center;
 }
+
 .go-button button {
   font-size: 24px;
   font-weight: bold;
@@ -633,23 +671,28 @@ body {
     transform: translateY(0px) scale(1);
     opacity: 1;
   }
+
   90% {
     transform: translateY(300px) scale(5);
     opacity: 1;
   }
+
   100% {
     transform: translateY(400px) scale(5);
     opacity: 0;
   }
 }
+
 @keyframes pikaSpawn {
   0% {
     opacity: 1;
     background: url("images/pokemon/Pm8nZ_0r.gif");
   }
+
   99% {
     opacity: 1;
   }
+
   100% {
     transform: translateY(100px) scale(5);
     background: url("images/pokemon/Pm8nZ_0r.gif");
