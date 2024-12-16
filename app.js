@@ -20,14 +20,15 @@ function setStaticPokemon() {
   console.log(pokemons);
   let i = 1;
   for (let index = 0; index < pokemons.length; index++) {
+    pokemons[index].setAttribute("task", i);
     if (index == 0) {
       pokemons[
         index
-      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left: 38%; animation-delay: 5s;`;
+      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left:55%; animation-delay: 5s;`;
     } else {
       pokemons[
         index
-      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left:30%; top:40%; animation-delay: 9s;`;
+      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left:48%; top:40%; animation-delay: 9s;`;
     }
     i++;
   }
@@ -47,6 +48,7 @@ button_go.addEventListener("click", () => {
   setStaticPokemon();
   container_start.style.display = "none";
   container_app.style.display = "block";
+  addTasks();
 });
 button_reset.addEventListener("click", () => {
   localStorage.clear();
@@ -73,11 +75,19 @@ if (localStorage.getItem("pokemons") !== null) {
 }
 //game
 class Task {
+  #id;
   #description;
   #completed;
-  constructor(description, completed) {
+  constructor(id, description, completed) {
+    this.#id = id;
     this.#description = description;
     this.#completed = completed;
+  }
+  set id(id) {
+    this.#id = id;
+  }
+  get id() {
+    return this.#id;
   }
   set description(description) {
     this.#description = description;
@@ -96,21 +106,23 @@ class Task {
 function addTasks() {
   let team = JSON.parse(localStorage.getItem("pokemons"));
   let arr_tasks = [
-    new Task(`Acaricia a ${team[0]}`, false),
-    new Task(`Acaricia a ${team[1]}`, false),
-    new Task("Acaricia a Golduck", false),
-    new Task("Acaricia a dragonair", false),
-    new Task("Busca pokemon entre la hierba alta", false),
+    new Task(1, `Acaricia a ${team[0]}`, false),
+    new Task(2, `Acaricia a ${team[1]}`, false),
+    new Task(3, "Acaricia a Golduck", false),
+    new Task(4, "Acaricia a dragonair", false),
+    new Task(5, "Busca pokemon entre la hierba alta", false),
   ];
   let tasks = document.getElementsByClassName("tasks")[0];
   console.log(tasks);
   console.log(arr_tasks);
-
+  
   for (let index = 0; index < arr_tasks.length; index++) {
     let task_div = document.createElement("div");
     task_div.className = "task";
-    task_div.innerHTML = `<p>${arr_tasks[index].description}</p>`;
+    task_div.innerHTML = `<p>${arr_tasks[index].id}.${arr_tasks[index].description}</p>`;
     tasks.appendChild(task_div);
   }
 }
-addTasks();
+function completeTask(idTask){
+
+}
