@@ -9,12 +9,11 @@
   </head>
 
   <body>
-    <div class="container" id="app">
+    <div class="container" id="app" style="display: none">
       <div class="escenario">
         <div class="instrucciones">
           <h2>¡Bienvenido!</h2>
-          <div class="tasks">
-          </div>
+          <div class="tasks"></div>
         </div>
         <img src="brjUBT.gif" alt="escenario" />
         <div class="pokeball-grass"></div>
@@ -25,16 +24,10 @@
         <div class="pokemon-static" task="4"></div>
         <div class="pokemon-static" task="5"></div>
       </div>
-      <!--<div class="pokemon-moving"></div>
-      <div class="pokemon-moving6"></div>
-      <div class="pokemon-moving2"></div>
-      <div class="pokemon-moving3"></div>
-      <div class="pokemon-moving4"></div>
-      <div class="pokemon-moving5"></div>-->
     </div>
     <div class="start-menu" id="start">
       <audio autoplay>
-        <source src="audio/temon.mp3"/>
+        <source src="audio/temon.mp3" />
       </audio>
       <div class="menu">
         <div class="title">
@@ -105,6 +98,16 @@
       <div class="pokemon-moving4"></div>
       <div class="pokemon-moving5"></div>
       <div class="poke"></div>
+    </div>
+    <div class="cont-load" style="display: none;" id="loading">
+      <div class="banner-info">
+        <button>Realiza Todas las tareas</button>
+        <img src="blai.png" alt="">
+      </div>
+      <div class="loaders-container">
+        <div class="loader"></div>
+        <div class="loader"></div>
+      </div>
     </div>
   </body>
 </html>

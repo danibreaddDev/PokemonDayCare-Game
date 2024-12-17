@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: brown;
+  background-color: brown;  
 }
 
 .escenario {
@@ -25,6 +25,7 @@ body {
   padding: 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .escenario img {
@@ -47,7 +48,7 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-.task{
+.task {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -719,5 +720,69 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 1;
+  }
+}
+.cont-load {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(orange, red);
+}
+.banner-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border: 10px solid black;
+  border-style: dashed;
+}
+.banner-info button {
+  align-self: first baseline;
+  border-image-source: url(dbc6bb04ec50d897be14710ef38a1f03-removebg-preview.png);
+  border-image-width: 50px;
+  border-image-slice:200;
+  width: 50%;
+  height: 100px;
+}
+.banner-info img {
+  
+  width: 30%;
+  height: auto;
+}
+
+.loaders-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.loader {
+  background-image: url(Pokeball-PNG-HD-Image.webp);
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  animation: shake 1s linear infinite;
+}
+[class="loader"]:nth-child(1) {
+  animation-delay: 0.5s;
+}
+[class="loader"]:nth-child(2) {
+  animation-delay: 1s;
+}
+
+@keyframes shake {
+  0%,
+  33.333% {
+    transform: rotate(0deg);
+  }
+  38.333%,
+  48.333% {
+    transform: rotate(10deg);
+  }
+  53.333%,
+  100% {
+    transform: rotate(0deg);
   }
 }

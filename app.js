@@ -30,6 +30,7 @@ let button_go = document.getElementById("go");
 let button_reset = document.getElementById("reset");
 let pokemons_pc = document.querySelectorAll(".pc-pokemons div");
 let audio = document.querySelectorAll("audio");
+let container_loading = document.getElementById("loading");
 audio[0].src = "/audio/temon.mp3";
 let pokemonMenuContainer = document.getElementById("choosePokes");
 let pokemons = Array.from(document.querySelectorAll(".pokemon-static"));
@@ -39,7 +40,12 @@ button_go.addEventListener("click", () => {
   audio[0].src = "audio/theme.mp3";
   setStaticPokemon();
   container_start.style.display = "none";
-  container_app.style.display = "block";
+  container_loading.style.display = "flex";
+  setTimeout(() => {
+    container_loading.style.display = "none";
+    container_app.style.display = "block";
+  }, 4000);
+
   addDivsTasks();
 });
 button_reset.addEventListener("click", () => {
@@ -121,6 +127,10 @@ function addDivsTasks() {
     pokemons[index].addEventListener("click", () => {
       completeTask(pokemons[index].getAttribute("task"));
       updateDivTask(pokemons[index].getAttribute("task"));
+      if (checkWin()) {
+        alert("ganaste");
+        //mostraremos dialogo
+      }
     });
   }
 }
@@ -150,10 +160,6 @@ function updateDivTask(idTask) {
   svg_element.innerHTML =
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="green" d="M18 6h2v2h-2zm-2 4V8h2v2zm-2 2v-2h2v2zm-2 2h2v-2h-2zm-2 2h2v-2h-2zm-2 0v2h2v-2zm-2-2h2v2H6zm0 0H4v-2h2z"/></svg>';
   task.appendChild(svg_element);
-  if (checkWin()) {
-    alert("ganaste");
-    //mostraremos dialogo
-  }
 }
 function checkWin() {
   return JSON.parse(localStorage.getItem("tasks")).every(
