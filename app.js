@@ -15,23 +15,14 @@ function addPokemon(myPokemon) {
   myPokemon.style.cssText = `border: 2px solid rgb(16, 53, 239); border-style:dashed; background-image:url(/images/pc/gifs/${name}.gif); background-size:cover; background-position:center;`;
 }
 function setStaticPokemon() {
-  let pokemons = document.getElementsByClassName("pokemon-static");
-  let team = JSON.parse(localStorage.getItem("pokemons"));
   console.log(pokemons);
-  let i = 1;
-  for (let index = 0; index < pokemons.length; index++) {
-    pokemons[index].setAttribute("task", i);
-    if (index == 0) {
-      pokemons[
-        index
-      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left:55%; animation-delay: 5s;`;
-    } else {
-      pokemons[
-        index
-      ].style.cssText = `background-image: url("/images/pc/gifs/${team[index]}.gif"); left:48%; top:40%; animation-delay: 9s;`;
-    }
-    i++;
-  }
+
+  let myTeamElements = pokemons.filter((element, index) => index < 2);
+  let team = JSON.parse(localStorage.getItem("pokemons"));
+  myTeamElements[0].setAttribute("task", 1);
+  myTeamElements[0].style.cssText = `background-image: url("/images/pc/gifs/${team[0]}.gif"); left:55%; animation-delay: 5s;`;
+  myTeamElements[1].setAttribute("task", 2);
+  myTeamElements[1].style.cssText = `background-image: url("/images/pc/gifs/${team[1]}.gif"); left:48%; top:40%; animation-delay: 9s;`;
 }
 let container_app = document.getElementById("app");
 let container_start = document.getElementById("start");
@@ -41,6 +32,7 @@ let pokemons_pc = document.querySelectorAll(".pc-pokemons div");
 let audio = document.querySelectorAll("audio");
 audio[0].src = "/audio/temon.mp3";
 let pokemonMenuContainer = document.getElementById("choosePokes");
+let pokemons = Array.from(document.querySelectorAll(".pokemon-static"));
 container_app.style.display = "none";
 button_go.addEventListener("click", () => {
   console.log(audio);
@@ -48,7 +40,7 @@ button_go.addEventListener("click", () => {
   setStaticPokemon();
   container_start.style.display = "none";
   container_app.style.display = "block";
-  addTasks();
+  addDivsTasks();
 });
 button_reset.addEventListener("click", () => {
   localStorage.clear();
@@ -75,31 +67,31 @@ if (localStorage.getItem("pokemons") !== null) {
 }
 //game
 class Task {
-  #id;
-  #description;
-  #completed;
+  id;
+  description;
+  completed;
   constructor(id, description, completed) {
-    this.#id = id;
-    this.#description = description;
-    this.#completed = completed;
+    this.id = id;
+    this.description = description;
+    this.completed = completed;
   }
   set id(id) {
-    this.#id = id;
+    this.id = id;
   }
   get id() {
-    return this.#id;
+    return this.id;
   }
   set description(description) {
-    this.#description = description;
+    this.description = description;
   }
   get description() {
-    return this.#description;
+    return this.description;
   }
   set completed(completed) {
-    this.#completed = completed;
+    this.completed = completed;
   }
   get completed() {
-    return this.#completed;
+    return this.completed;
   }
 }
 
@@ -112,17 +104,59 @@ function addTasks() {
     new Task(4, "Acaricia a dragonair", false),
     new Task(5, "Busca pokemon entre la hierba alta", false),
   ];
+  localStorage.setItem("tasks", JSON.stringify(arr_tasks));
+}
+function addDivsTasks() {
+  addTasks();
+  let storageTasks = JSON.parse(localStorage.getItem("tasks"));
+  console.log("Tareas guardadas:", JSON.parse(localStorage.getItem("tasks")));
   let tasks = document.getElementsByClassName("tasks")[0];
-  console.log(tasks);
-  console.log(arr_tasks);
-  
-  for (let index = 0; index < arr_tasks.length; index++) {
+  for (let index = 0; index < storageTasks.length; index++) {
     let task_div = document.createElement("div");
     task_div.className = "task";
-    task_div.innerHTML = `<p>${arr_tasks[index].id}.${arr_tasks[index].description}</p>`;
+    task_div.innerHTML = `<p>${storageTasks[index].id}.${storageTasks[index].description}</p>`;
     tasks.appendChild(task_div);
   }
+  for (let index = 0; index < pokemons.length; index++) {
+    pokemons[index].addEventListener("click", () => {
+      completeTask(pokemons[index].getAttribute("task"));
+      updateDivTask(pokemons[index].getAttribute("task"));
+    });
+  }
 }
-function completeTask(idTask){
+function completeTask(idTask) {
+  let storageTasks = JSON.parse(localStorage.getItem("tasks"));
+  console.log(idTask);
 
+  let taskForComplete = storageTasks.find(
+    (task) => task.id === parseInt(idTask)
+  );
+  console.log(taskForComplete);
+
+  taskForComplete.completed = true;
+  localStorage.setItem("tasks", JSON.stringify(storageTasks));
+}
+function updateDivTask(idTask) {
+  console.log(idTask);
+
+  let tasks = Array.from(document.querySelectorAll(".task"));
+  console.log(tasks);
+  let task = tasks.find((p) => {
+    return p.getElementsByTagName("p")[0].innerText.includes(idTask);
+  });
+  console.log(task);
+  task.querySelector("p").style.color = "green";
+  let svg_element = document.createElement("svg");
+  svg_element.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="green" d="M18 6h2v2h-2zm-2 4V8h2v2zm-2 2v-2h2v2zm-2 2h2v-2h-2zm-2 2h2v-2h-2zm-2 0v2h2v-2zm-2-2h2v2H6zm0 0H4v-2h2z"/></svg>';
+  task.appendChild(svg_element);
+  if (checkWin()) {
+    alert("ganaste");
+    //mostraremos dialogo
+  }
+}
+function checkWin() {
+  return JSON.parse(localStorage.getItem("tasks")).every(
+    (task) => task.completed === true
+  );
 }

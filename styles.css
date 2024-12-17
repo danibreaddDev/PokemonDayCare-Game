@@ -39,14 +39,18 @@ body {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  
 }
-.tasks{
+.tasks {
   font-size: 16px;
   padding: 20px;
-  display: flex;  
+  display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.task{
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 [class*="pokeball"] {
   position: relative;
@@ -201,7 +205,21 @@ body {
   background-repeat: no-repeat;
   animation: appear 1s linear forwards;
 }
-
+.pokemon-static[task="3"] {
+  border: 1px solid black;
+  left: 82%;
+  top: 56%;
+}
+.pokemon-static[task="4"] {
+  border: 1px solid black;
+  left: 84%;
+  top: 33%;
+}
+.pokemon-static[task="5"] {
+  border: 1px solid black;
+  left: 75%;
+  top: 33%;
+}
 @keyframes appear {
   0% {
     opacity: 0;
