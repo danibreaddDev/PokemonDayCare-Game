@@ -251,14 +251,14 @@ body {
   top: 75%;
   left: -300px;
   animation: movingGif 10s linear 30s infinite;
-  background-image: url("images/pokemon/pikachu.gif");
+  background-image: url("images/pokemon/sonic.gif");
 }
 
 .pokemon-moving2 {
-  width: 200px;
-  height: 200px;
-  animation: movingSprites 10s linear reverse 10s;
-  background-image: url("/images/pokemon/charizard1.png");
+  width: 60px;
+  height: 60px;
+  animation: movingGif 10s linear 5s reverse;
+  background-image: url("/images/pokemon/mew.gif");
   background-position: center;
   top: 20%;
   left: -300px;
@@ -267,7 +267,7 @@ body {
 .pokemon-moving3 {
   width: 60px;
   height: 60px;
-  top: 40%;
+  top: 80%;
   left: -300px;
   animation: movingGif 10s linear 50s infinite reverse;
   background-image: url("images/pokemon/jolteon.gif");
@@ -276,27 +276,27 @@ body {
 .pokemon-moving4 {
   width: 60px;
   height: 60px;
-  top: 35%;
+  top: 75%;
   left: -300px;
-  animation: movingGif 10s linear 1s infinite alternate-reverse;
+  animation: movingGif 10s linear 1s infinite reverse;
   background-image: url("images/pokemon/Scorbunny.gif");
 }
 
 .pokemon-moving5 {
-  width: 60px;
-  height: 60px;
+  width: 300px;
+  height: 300px;
   top: 15%;
   left: -300px;
-  animation: movingGif 10s linear 25s infinite alternate;
-  background-image: url("images/pokemon/mew.gif");
+  animation: movingGif 10s linear 15s infinite reverse;
+  background-image: url("images/pokemon/charizard.gif");
 }
 
 .pokemon-moving6 {
   width: 60px;
   height: 60px;
-  top: 60%;
+  top: 70%;
   left: -300px;
-  animation: movingSprite 10s linear 5s infinite alternate;
+  animation: movingSprite 10s linear 5s infinite;
   background-image: url("images/pokemon/pikachu_surf-removebg-preview.png");
 }
 
@@ -809,7 +809,7 @@ dialog[open] {
   border-radius: 10px;
   position: fixed;
   left: 25%;
-  animation: showDialog 1s linear forwards;
+  animation: showDialog 0.5s linear forwards;
 }
 
 dialog > div {

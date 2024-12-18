@@ -20,9 +20,9 @@ function setStaticPokemon() {
   let myTeamElements = pokemons.filter((element, index) => index < 2);
   let team = JSON.parse(localStorage.getItem("pokemons"));
   myTeamElements[0].setAttribute("task", 1);
-  myTeamElements[0].style.cssText = `background-image: url("/images/pc/gifs/${team[0]}.gif"); left:55%; animation-delay: 5s;`;
+  myTeamElements[0].style.cssText = `background-image: url("/images/pc/gifs/${team[0]}.gif"); left:50%; animation-delay: 5s;`;
   myTeamElements[1].setAttribute("task", 2);
-  myTeamElements[1].style.cssText = `background-image: url("/images/pc/gifs/${team[1]}.gif"); left:48%; top:40%; animation-delay: 9s;`;
+  myTeamElements[1].style.cssText = `background-image: url("/images/pc/gifs/${team[1]}.gif"); left:45%; top:40%; animation-delay: 9s;`;
 }
 let container_app = document.getElementById("app");
 let container_start = document.getElementById("start");
@@ -149,7 +149,7 @@ function addDivsTasks() {
             location.reload();
           });
           dialog.showModal();
-        }, 1000);
+        }, 500);
       }
     });
   }
