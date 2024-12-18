@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
+:root {
+  --blue-color: #3c5aa6;
+  --yellow-color: #ffcb05;
+  --orange-color: #ff7a05;
+  --gradient: linear-gradient(
+    to right,
+    var(--orange-color),
+    var(--yellow-color)
+  );
+}
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +26,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: brown;  
+  background: var(--gradient);
 }
 
 .escenario {
@@ -26,18 +35,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .escenario img {
   position: relative;
   z-index: 1;
-  border: 5px solid red;
+  border: 5px solid var(--blue-color);
+  border-radius: 10px;
   border-style: dashed;
 }
 .instrucciones {
   background: white;
   padding: 20px;
-  border: 2px solid black;
+  border: 5px solid var(--blue-color);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -208,19 +220,15 @@ body {
 }
 .pokemon-static[task="3"] {
   border: 1px solid black;
-  left: 82%;
+  left: 75%;
   top: 56%;
 }
 .pokemon-static[task="4"] {
   border: 1px solid black;
-  left: 84%;
+  left: 78%;
   top: 33%;
 }
-.pokemon-static[task="5"] {
-  border: 1px solid black;
-  left: 75%;
-  top: 33%;
-}
+
 @keyframes appear {
   0% {
     opacity: 0;
@@ -412,7 +420,7 @@ body {
   position: relative;
   z-index: 1;
   margin-top: 10px;
-  border: 4px solid #114cef;
+  border: 4px solid var(--blue-color);
   width: 50%;
   height: 75%;
   border-radius: 10px;
@@ -431,14 +439,24 @@ body {
   grid-area: title;
   font-size: 36px;
   color: #3c5aa6;
-  text-shadow: 2px 2px #ffcb05;
+  text-shadow: 2px 2px var(--yellow-color);
   transition: all 0.3s linear;
 }
 
-.menu:hover .title {
-  transform: scale(1.1);
+.title > h1 {
+  animation: fontAnimation 2s linear infinite;
 }
-
+@keyframes fontAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .pokemons {
   grid-area: pokemons;
   display: flex;
@@ -453,7 +471,7 @@ body {
 
 .pc-title {
   padding: 10px;
-  background: #ffcb05;
+  background: var(--yellow-color);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
@@ -625,7 +643,7 @@ body {
   padding: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: #ffcb05;
+  background: var(--yellow-color);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -648,28 +666,28 @@ body {
   align-self: center;
 }
 
-.go-button button {
+.btn_app {
   font-size: 24px;
   font-weight: bold;
   padding: 10px 20px;
-  background-color: #ffcb05;
+  background-color: var(--yellow-color);
   color: #3c5aa6;
-  border: 5px solid #3c5aa6;
+  border: 5px solid var(--blue-color);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.go-button button:hover {
-  background-color: #3c5aa6;
-  border-color: #ffcb05;
-  color: #ffcb05;
+.btn_app:hover {
+  background-color: var(--blue-color);
+  border-color: var(--yellow-color);
+  color: var(--yellow-color);
   transform: scale(1.1);
 }
 
 .menu:has(.go-button:hover) .title {
-  text-shadow: 2px 2px #3c5aa6;
-  color: #ffcb05;
+  text-shadow: 2px 2px var(--blue-color);
+  color: var(--yellow-color);
 }
 
 /*pikachu corriendo*/
@@ -729,7 +747,7 @@ body {
   height: 100vh;
   align-items: center;
   gap: 20px;
-  background: linear-gradient(orange, red);
+  background: var(--gradient);
 }
 .banner-info {
   display: flex;
@@ -743,12 +761,11 @@ body {
   align-self: first baseline;
   border-image-source: url(dbc6bb04ec50d897be14710ef38a1f03-removebg-preview.png);
   border-image-width: 50px;
-  border-image-slice:200;
+  border-image-slice: 200;
   width: 50%;
   height: 100px;
 }
 .banner-info img {
-  
   width: 30%;
   height: auto;
 }
@@ -784,5 +801,39 @@ body {
   53.333%,
   100% {
     transform: rotate(0deg);
+  }
+}
+
+dialog[open] {
+  border: 5px solid var(--blue-color);
+  border-radius: 10px;
+  position: fixed;
+  left: 25%;
+  animation: showDialog 1s linear forwards;
+}
+
+dialog > div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+dialog > div > button {
+  padding: 10px;
+  width: fit-content;
+}
+@keyframes showDialog {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    top: 5%;
+  }
+  100% {
+    opacity: 1;
+    top: 10%;
   }
 }

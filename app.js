@@ -31,22 +31,34 @@ let button_reset = document.getElementById("reset");
 let pokemons_pc = document.querySelectorAll(".pc-pokemons div");
 let audio = document.querySelectorAll("audio");
 let container_loading = document.getElementById("loading");
+let btn_reload = "";
 audio[0].src = "/audio/temon.mp3";
 let pokemonMenuContainer = document.getElementById("choosePokes");
 let pokemons = Array.from(document.querySelectorAll(".pokemon-static"));
+let dialog = document.querySelector("dialog");
 container_app.style.display = "none";
 button_go.addEventListener("click", () => {
-  console.log(audio);
-  audio[0].src = "audio/theme.mp3";
-  setStaticPokemon();
-  container_start.style.display = "none";
-  container_loading.style.display = "flex";
-  setTimeout(() => {
-    container_loading.style.display = "none";
-    container_app.style.display = "block";
-  }, 4000);
+  if (localStorage.getItem("pokemons") == null) {
+    dialog.innerHTML = ` <div><h3>Selecciona Pokemon</h3>
+        <button class="btn_app" id="cerrar">Cerrar</button></div>`;
+    let btn_cerrar = document.getElementById("cerrar");
+    btn_cerrar.addEventListener("click", () => {
+      dialog.close();
+    });
+    dialog.showModal();
+  } else {
+    console.log(audio);
+    audio[0].src = "audio/theme.mp3";
+    setStaticPokemon();
+    container_start.style.display = "none";
+    container_loading.style.display = "flex";
+    setTimeout(() => {
+      container_loading.style.display = "none";
+      container_app.style.display = "block";
+    }, 4000);
 
-  addDivsTasks();
+    addDivsTasks();
+  }
 });
 button_reset.addEventListener("click", () => {
   localStorage.clear();
@@ -54,6 +66,7 @@ button_reset.addEventListener("click", () => {
     pokemons_pc[index].style = "";
   }
 });
+
 
 for (let index = 0; index < pokemons_pc.length; index++) {
   pokemons_pc[index].addEventListener("click", () => {
@@ -108,7 +121,6 @@ function addTasks() {
     new Task(2, `Acaricia a ${team[1]}`, false),
     new Task(3, "Acaricia a Golduck", false),
     new Task(4, "Acaricia a dragonair", false),
-    new Task(5, "Busca pokemon entre la hierba alta", false),
   ];
   localStorage.setItem("tasks", JSON.stringify(arr_tasks));
 }
@@ -128,8 +140,16 @@ function addDivsTasks() {
       completeTask(pokemons[index].getAttribute("task"));
       updateDivTask(pokemons[index].getAttribute("task"));
       if (checkWin()) {
-        alert("ganaste");
-        //mostraremos dialogo
+        setTimeout(() => {
+          dialog.innerHTML = ` <div><h3>Has realizado todas las tareas, Entrenador/a!</h3>
+          <button class="btn_app" id="reload_app">Reiniciar</button></div>`;
+          btn_reload = document.getElementById("reload_app");
+          btn_reload.addEventListener("click", () => {
+            localStorage.clear();
+            location.reload();
+          });
+          dialog.showModal();
+        }, 1000);
       }
     });
   }
