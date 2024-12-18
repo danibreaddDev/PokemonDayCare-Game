@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 :root {
   --blue-color: #3c5aa6;
   --yellow-color: #ffcb05;
   --orange-color: #ff7a05;
-  --gradient: linear-gradient(
-    to right,
-    var(--orange-color),
-    var(--yellow-color)
-  );
+  --gradient: linear-gradient(to right,
+      var(--orange-color),
+      var(--yellow-color));
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -45,6 +45,7 @@ body {
   border-radius: 10px;
   border-style: dashed;
 }
+
 .instrucciones {
   background: white;
   padding: 20px;
@@ -53,6 +54,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .tasks {
   font-size: 16px;
   padding: 20px;
@@ -60,11 +62,13 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
 .task {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+
 [class*="pokeball"] {
   position: relative;
   z-index: -1;
@@ -86,6 +90,7 @@ body {
   right: 755px;
   animation: spawngrasspoke 5s linear 4s;
 }
+
 @keyframes spawngrasspoke {
   0% {
     transform: translateY(0px) rotate(0) scale(1);
@@ -146,6 +151,7 @@ body {
     border-radius: 100%;
   }
 }
+
 @keyframes spawnpokeStreet {
   0% {
     transform: translateY(0px) rotate(0) scale(1);
@@ -218,11 +224,13 @@ body {
   background-repeat: no-repeat;
   animation: appear 1s linear forwards;
 }
+
 .pokemon-static[task="3"] {
   border: 1px solid black;
   left: 75%;
   top: 56%;
 }
+
 .pokemon-static[task="4"] {
   border: 1px solid black;
   left: 78%;
@@ -385,6 +393,7 @@ body {
 }
 
 @keyframes fly {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -443,20 +452,24 @@ body {
   transition: all 0.3s linear;
 }
 
-.title > h1 {
+.title>h1 {
   animation: fontAnimation 2s linear infinite;
 }
+
 @keyframes fontAnimation {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 .pokemons {
   grid-area: pokemons;
   display: flex;
@@ -479,7 +492,7 @@ body {
   align-items: center;
 }
 
-.pc-title > p {
+.pc-title>p {
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
@@ -513,126 +526,126 @@ body {
   cursor: pointer;
 }
 
-.pc-pokemons > div:nth-child(1) {
+.pc-pokemons>div:nth-child(1) {
   grid-area: pokemonpc1;
   background-image: url("images/pc/pngs/staraptor.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(1):hover {
+.pc-pokemons>div:nth-child(1):hover {
   grid-area: pokemonpc1;
   background-image: url("images/pc/gifs/staraptor.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(2) {
+.pc-pokemons>div:nth-child(2) {
   grid-area: pokemonpc2;
   background-image: url("images/pc/pngs/luxray.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(2):hover {
+.pc-pokemons>div:nth-child(2):hover {
   grid-area: pokemonpc2;
   background-image: url("images/pc/gifs/luxray.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(3) {
+.pc-pokemons>div:nth-child(3) {
   grid-area: pokemonpc3;
   background-image: url("images/pc/pngs/gyratina.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(3):hover {
+.pc-pokemons>div:nth-child(3):hover {
   grid-area: pokemonpc3;
   background-image: url("images/pc/gifs/gyratina.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(4) {
+.pc-pokemons>div:nth-child(4) {
   grid-area: pokemonpc4;
   background-image: url("images/pc/pngs/lucario.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(4):hover {
+.pc-pokemons>div:nth-child(4):hover {
   grid-area: pokemonpc4;
   background-image: url("images/pc/gifs/lucario.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(5) {
+.pc-pokemons>div:nth-child(5) {
   grid-area: pokemonpc5;
   background-image: url("images/pc/pngs/arceus.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(5):hover {
+.pc-pokemons>div:nth-child(5):hover {
   grid-area: pokemonpc5;
   background-image: url("images/pc/gifs/arceus.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(6) {
+.pc-pokemons>div:nth-child(6) {
   grid-area: pokemonpc6;
   background-image: url("images/pc/pngs/dratini.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(6):hover {
+.pc-pokemons>div:nth-child(6):hover {
   grid-area: pokemonpc6;
   background-image: url("images/pc/gifs/dratini.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(7) {
+.pc-pokemons>div:nth-child(7) {
   background-image: url("images/pc/pngs/mudkip.png");
   grid-area: pokemonpc7;
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(7):hover {
+.pc-pokemons>div:nth-child(7):hover {
   grid-area: pokemonpc7;
   background-image: url("images/pc/gifs/mudkip.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(8) {
+.pc-pokemons>div:nth-child(8) {
   background-image: url("images/pc/pngs/weavile.png");
   grid-area: pokemonpc8;
   background-size: cover;
   background-position: center;
 }
 
-.pc-pokemons > div:nth-child(8):hover {
+.pc-pokemons>div:nth-child(8):hover {
   grid-area: pokemonpc8;
   background-image: url("images/pc/gifs/weavile.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(9) {
+.pc-pokemons>div:nth-child(9) {
   background-image: url("images/pc/pngs/dyalga.png");
   grid-area: pokemonpc9;
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(9):hover {
+.pc-pokemons>div:nth-child(9):hover {
   grid-area: pokemonpc9;
   background-image: url("images/pc/gifs/dyalga.gif");
   background-size: cover;
@@ -649,7 +662,7 @@ body {
   align-items: center;
 }
 
-.pc-num > p {
+.pc-num>p {
   padding: 10px;
   background: white;
   border: 1px solid black;
@@ -703,6 +716,23 @@ body {
   background-image: url("images/pokemon/Pikachu.gif");
   background-size: contain;
   background-repeat: no-repeat;
+
+}
+
+.poke2 {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  width: 85px;
+  height: 85px;
+  bottom: 0;
+  left: 20%;
+  animation: pikaHello 8s linear 10s infinite;
+  background-image: url("images/pokemon/pikachuHello.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
 }
 
 @keyframes pikaRunningStop {
@@ -740,6 +770,33 @@ body {
     opacity: 1;
   }
 }
+
+@keyframes pikaHello {
+  0% {
+    transform: scale(5);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateY(-100px) scale(5);
+    opacity: 1;
+  }
+
+
+  50% {
+    transform: translateY(400px) scale(5);
+    opacity: 1;
+  }
+
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .cont-load {
   display: flex;
   flex-direction: column;
@@ -749,6 +806,7 @@ body {
   gap: 20px;
   background: var(--gradient);
 }
+
 .banner-info {
   display: flex;
   flex-direction: column;
@@ -757,6 +815,7 @@ body {
   border: 10px solid black;
   border-style: dashed;
 }
+
 .banner-info button {
   align-self: first baseline;
   border-image-source: url(dbc6bb04ec50d897be14710ef38a1f03-removebg-preview.png);
@@ -765,6 +824,7 @@ body {
   width: 50%;
   height: 100px;
 }
+
 .banner-info img {
   width: 30%;
   height: auto;
@@ -775,6 +835,7 @@ body {
   flex-direction: row;
   gap: 10px;
 }
+
 .loader {
   background-image: url(Pokeball-PNG-HD-Image.webp);
   background-size: contain;
@@ -782,22 +843,27 @@ body {
   height: 50px;
   animation: shake 1s linear infinite;
 }
+
 [class="loader"]:nth-child(1) {
   animation-delay: 0.5s;
 }
+
 [class="loader"]:nth-child(2) {
   animation-delay: 1s;
 }
 
 @keyframes shake {
+
   0%,
   33.333% {
     transform: rotate(0deg);
   }
+
   38.333%,
   48.333% {
     transform: rotate(10deg);
   }
+
   53.333%,
   100% {
     transform: rotate(0deg);
@@ -812,7 +878,7 @@ dialog[open] {
   animation: showDialog 0.5s linear forwards;
 }
 
-dialog > div {
+dialog>div {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -820,18 +886,22 @@ dialog > div {
   align-items: center;
   gap: 20px;
 }
-dialog > div > button {
+
+dialog>div>button {
   padding: 10px;
   width: fit-content;
 }
+
 @keyframes showDialog {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
     top: 5%;
   }
+
   100% {
     opacity: 1;
     top: 10%;
