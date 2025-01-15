@@ -4,11 +4,9 @@
   --blue-color: #3c5aa6;
   --yellow-color: #ffcb05;
   --orange-color: #ff7a05;
-  --gradient: linear-gradient(
-    to right,
-    var(--orange-color),
-    var(--yellow-color)
-  );
+  --gradient: linear-gradient(to right,
+      var(--orange-color),
+      var(--yellow-color));
 }
 
 * {
@@ -396,6 +394,7 @@ body {
 }
 
 @keyframes fly {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -456,7 +455,7 @@ body {
   transition: all 0.3s linear;
 }
 
-.title > h1 {
+.title>h1 {
   animation: fontAnimation 2s linear infinite;
 }
 
@@ -496,7 +495,7 @@ body {
   align-items: center;
 }
 
-.pc-title > p {
+.pc-title>p {
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
@@ -526,126 +525,126 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-.pc-pokemons > div:nth-child(1) {
+.pc-pokemons>div:nth-child(1) {
   grid-area: pokemonpc1;
   background-image: url("images/pc/pngs/staraptor.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(1):hover {
+.pc-pokemons>div:nth-child(1):hover {
   grid-area: pokemonpc1;
   background-image: url("images/pc/gifs/staraptor.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(2) {
+.pc-pokemons>div:nth-child(2) {
   grid-area: pokemonpc2;
   background-image: url("images/pc/pngs/luxray.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(2):hover {
+.pc-pokemons>div:nth-child(2):hover {
   grid-area: pokemonpc2;
   background-image: url("images/pc/gifs/luxray.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(3) {
+.pc-pokemons>div:nth-child(3) {
   grid-area: pokemonpc3;
   background-image: url("images/pc/pngs/gyratina.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(3):hover {
+.pc-pokemons>div:nth-child(3):hover {
   grid-area: pokemonpc3;
   background-image: url("images/pc/gifs/gyratina.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(4) {
+.pc-pokemons>div:nth-child(4) {
   grid-area: pokemonpc4;
   background-image: url("images/pc/pngs/lucario.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(4):hover {
+.pc-pokemons>div:nth-child(4):hover {
   grid-area: pokemonpc4;
   background-image: url("images/pc/gifs/lucario.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(5) {
+.pc-pokemons>div:nth-child(5) {
   grid-area: pokemonpc5;
   background-image: url("images/pc/pngs/arceus.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(5):hover {
+.pc-pokemons>div:nth-child(5):hover {
   grid-area: pokemonpc5;
   background-image: url("images/pc/gifs/arceus.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(6) {
+.pc-pokemons>div:nth-child(6) {
   grid-area: pokemonpc6;
   background-image: url("images/pc/pngs/dratini.png");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(6):hover {
+.pc-pokemons>div:nth-child(6):hover {
   grid-area: pokemonpc6;
   background-image: url("images/pc/gifs/dratini.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(7) {
+.pc-pokemons>div:nth-child(7) {
   background-image: url("images/pc/pngs/mudkip.png");
   grid-area: pokemonpc7;
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(7):hover {
+.pc-pokemons>div:nth-child(7):hover {
   grid-area: pokemonpc7;
   background-image: url("images/pc/gifs/mudkip.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(8) {
+.pc-pokemons>div:nth-child(8) {
   background-image: url("images/pc/pngs/weavile.png");
   grid-area: pokemonpc8;
   background-size: cover;
   background-position: center;
 }
 
-.pc-pokemons > div:nth-child(8):hover {
+.pc-pokemons>div:nth-child(8):hover {
   grid-area: pokemonpc8;
   background-image: url("images/pc/gifs/weavile.gif");
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(9) {
+.pc-pokemons>div:nth-child(9) {
   background-image: url("images/pc/pngs/dyalga.png");
   grid-area: pokemonpc9;
   background-size: cover;
   background-position-y: center;
 }
 
-.pc-pokemons > div:nth-child(9):hover {
+.pc-pokemons>div:nth-child(9):hover {
   grid-area: pokemonpc9;
   background-image: url("images/pc/gifs/dyalga.gif");
   background-size: cover;
@@ -662,7 +661,7 @@ body {
   align-items: center;
 }
 
-.pc-num > p {
+.pc-num>p {
   padding: 10px;
   background: white;
   border: 1px solid black;
@@ -852,6 +851,7 @@ body {
 }
 
 @keyframes shake {
+
   0%,
   33.333% {
     transform: rotate(0deg);
@@ -876,7 +876,7 @@ dialog[open] {
   animation: showDialog 0.5s linear forwards;
 }
 
-dialog > div {
+dialog>div {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -885,7 +885,7 @@ dialog > div {
   gap: 20px;
 }
 
-dialog > div > button {
+dialog>div>button {
   padding: 10px;
   width: fit-content;
 }
@@ -904,4 +904,28 @@ dialog > div > button {
     opacity: 1;
     top: 10%;
   }
+}
+
+/*Cambio modo*/
+.changesMode {
+  border: 2px solid var(--blue-color);
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+  width: fit-content;
+  position: absolute;
+  left: -50px;
+
+
+}
+
+.changesMode svg:hover {
+  transition: all 0.1s linear;
+ transform: scale(1.2);
+}
+
+
+.dark div {
+  filter: saturate(5) hue-rotate(90deg) drop-shadow(3px 1px 1px black);
+
 }

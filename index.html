@@ -1,117 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="app.js"></script>
-  </head>
 
-  <body>
-    <div class="container" id="app" style="display: none">
-      <div class="escenario">
-        <div class="instrucciones">
-          <h2>¡Bienvenido!</h2>
-          <div class="tasks"></div>
-        </div>
-        <img src="brjUBT.gif" alt="escenario" />
-        <div class="pokeball-grass"></div>
-        <div class="pokeball-street"></div>
-        <div class="pokemon-static"></div>
-        <div class="pokemon-static"></div>
-        <div class="pokemon-static" task="3"></div>
-        <div class="pokemon-static" task="4"></div>
-       
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="app.js"></script>
+</head>
+
+<body>
+  <div class="container" id="app" style="display: none">
+    <div class="escenario">
+      <div class="instrucciones">
+        <h2>¡Bienvenido!</h2>
+        <div class="tasks"></div>
       </div>
+      <img src="brjUBT.gif" alt="escenario" />
+      <div class="pokeball-grass"></div>
+      <div class="pokeball-street"></div>
+      <div class="pokemon-static"></div>
+      <div class="pokemon-static"></div>
+      <div class="pokemon-static" task="3"></div>
+      <div class="pokemon-static" task="4"></div>
+
     </div>
-    <div class="start-menu" id="start">
-      <audio autoplay>
-        <source src="audio/temon.mp3" />
-      </audio>
-      <div class="menu">
-        <div class="title">
-          <h1>Pokémon Day Care</h1>
-        </div>
-        <div class="pokemons" id="choosePokes">
-          <div class="pc">
-            <div class="pc-title">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="#fff"
-                  d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225z"
-                />
-              </svg>
-              <p>BOX 1</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="#fff"
-                  d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2l10 10z"
-                />
-              </svg>
-            </div>
-            <div class="pc-pokemons">
-              <div pokemon="staraptor"></div>
-              <div pokemon="luxray"></div>
-              <div pokemon="gyratina"></div>
-              <div pokemon="lucario"></div>
-              <div pokemon="arceus"></div>
-              <div pokemon="dratini"></div>
-              <div pokemon="mudkip"></div>
-              <div pokemon="weavile"></div>
-              <div pokemon="dyalga"></div>
-            </div>
-            <div class="pc-num">
-              <p>Box space</p>
-              <img
-                src="Pokeball-PNG-HD-Image.webp"
-                width="34px"
-                height="34px"
-              />
-              <img
-                src="Pokeball-PNG-HD-Image.webp"
-                width="34px"
-                height="34px"
-              />
-            </div>
+  </div>
+  <div class="start-menu" id="start">
+    <audio autoplay>
+      <source src="audio/temon.mp3" />
+    </audio>
+    <div class="menu">
+      <button class="changesMode" id="toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="M8 6h8v2H8zm-4 4V8h4v2zm-2 2v-2h2v2zm0 2v-2H0v2zm2 2H2v-2h2zm4 2H4v-2h4zm8 0v2H8v-2zm4-2v2h-4v-2zm2-2v2h-2v-2zm0-2h2v2h-2zm-2-2h2v2h-2zm0 0V8h-4v2zm-10 1h4v4h-4z" />
+        </svg>
+      </button>
+      <div class="title">
+        <h1>Pokémon Day Care</h1>
+      </div>
+      <div class="pokemons" id="choosePokes">
+        <div class="pc">
+          <div class="pc-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="#fff" d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225z" />
+            </svg>
+            <p>BOX 1</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="#fff" d="M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2l10 10z" />
+            </svg>
+          </div>
+          <div class="pc-pokemons">
+            <div pokemon="staraptor"></div>
+            <div pokemon="luxray"></div>
+            <div pokemon="gyratina"></div>
+            <div pokemon="lucario"></div>
+            <div pokemon="arceus"></div>
+            <div pokemon="dratini"></div>
+            <div pokemon="mudkip"></div>
+            <div pokemon="weavile"></div>
+            <div pokemon="dyalga"></div>
+          </div>
+          <div class="pc-num">
+            <p>Box space</p>
+            <img src="Pokeball-PNG-HD-Image.webp" width="34px" height="34px" />
+            <img src="Pokeball-PNG-HD-Image.webp" width="34px" height="34px" />
           </div>
         </div>
-        <div class="go-button">
-          <button class="btn_app" id="reset">reset!</button>
-          <button class="btn_app" id="go">Go!</button>
-        </div>
       </div>
-      <div class="pokemon-moving"></div>
-      <div class="pokemon-moving6"></div>
-      <div class="pokemon-moving2"></div>
-      <div class="pokemon-moving3"></div>
-      <div class="pokemon-moving4"></div>
-      <div class="pokemon-moving5"></div>
-      <div class="poke"></div>
-      <div class="poke2"></div>
-    </div>
-    <div class="cont-load" style="display: none" id="loading">
-      <div class="banner-info">
-        <button>Realiza Todas las tareas</button>
-        <img src="blai.png" alt="" />
-      </div>
-      <div class="loaders-container">
-        <div class="loader"></div>
-        <div class="loader"></div>
+      <div class="go-button">
+        <button class="btn_app" id="reset">reset!</button>
+        <button class="btn_app" id="go">Go!</button>
       </div>
     </div>
-    <dialog>
-      
-    </dialog>
-  </body>
+    <div class="pokemon-moving"></div>
+    <div class="pokemon-moving6"></div>
+    <div class="pokemon-moving2"></div>
+    <div class="pokemon-moving3"></div>
+    <div class="pokemon-moving4"></div>
+    <div class="pokemon-moving5"></div>
+    <div class="poke"></div>
+    <div class="poke2"></div>
+  </div>
+  <div class="cont-load" style="display: none" id="loading">
+    <div class="banner-info">
+      <button>Realiza Todas las tareas</button>
+      <img src="blai.png" alt="" />
+    </div>
+    <div class="loaders-container">
+      <div class="loader"></div>
+      <div class="loader"></div>
+    </div>
+  </div>
+  <dialog>
+
+  </dialog>
+</body>
+
 </html>
