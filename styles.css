@@ -924,7 +924,11 @@ dialog>div>button {
  transform: scale(1.2);
 }
 
-
+video{
+  position: absolute;
+  z-index: 2;
+  width: 25%;
+}
 .dark div {
   filter: saturate(5) hue-rotate(90deg) drop-shadow(3px 1px 1px black);
 
